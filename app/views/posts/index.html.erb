@@ -1,5 +1,22 @@
+<div class="post-row">
+  <% @posts.each do |post| %>
+    <div class="post-content">
+      <span class="name">
+        <%= post.name %>
+      </span>
+      <p><%= post.content %></p>
+    </div>
+  <% end %>
+</div>
 
-
-名前: <input type="text" name="namae" maxlength="20"><br>
-本文: <textarea name="honbun"></textarea><br>
-<input type="submit" value="投稿する">
+<%= form_with(model: @post, local: true) do |f| %>
+    <div class="form-input">
+      <div>
+        名前<%= f.text_field :name, class: 'form-name' %>
+      </div>
+      <div>
+        本文<%= f.text_area :content, class: 'form-content' %>
+      </div>
+    </div>
+    <%= f.submit '投稿する', class: 'form-submit' %>
+<% end %>
