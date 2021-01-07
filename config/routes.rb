@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'topics/index'
-  root to: 'posts#index'
+  root to: 'topics#index'
   resources :posts, only: [:index, :create]
 end
