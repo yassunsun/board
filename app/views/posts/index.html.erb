@@ -1,22 +1,23 @@
-<div class="post-row">
-  <% @posts.each do |post| %>
-    <div class="post-content">
-      <span class="name">
-        <%= post.name %>
-      </span>
-      <p><%= post.content %></p>
-    </div>
-  <% end %>
-</div>
+<% @posts.each do |post| %>
+  <div class="post-row">
+    <span class="name">
+      <%= post.name %>
+    </span>
+    <span class="time">
+      <%= post.created_at %>
+    </span>
+    <P class=content><%= post.content %></p>
+  </div>
+<% end %>
 
 <%= form_with(model: @post, local: true) do |f| %>
-    <div class="form-input">
-      <div>
-        名前<%= f.text_field :name, class: 'form-name' %>
-      </div>
-      <div>
-        本文<%= f.text_area :content, class: 'form-content' %>
-      </div>
+  <div class="form-input">
+    <div>
+      名前<%= f.text_field :name, class: 'form-name' %>
     </div>
-    <%= f.submit '投稿する', class: 'form-submit' %>
+    <div>
+      本文<%= f.text_area :content, class: 'form-content' %>
+    </div>
+  </div>
+  <%= f.submit '投稿する', class: 'form-submit' %>
 <% end %>
