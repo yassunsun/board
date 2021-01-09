@@ -7,3 +7,9 @@
 <div>
   <%= link_to '投稿', posts_path %>
 </div>
+
+<% @topics.each do |topic| %>
+  <div class="topic-row">
+    <P class=title><%= topic.title %></p>
+  </div>
+<% end %>
