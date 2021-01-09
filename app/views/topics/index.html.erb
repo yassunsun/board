@@ -4,12 +4,9 @@
   <%= link_to '新規スレッド作成', new_topic_path %>
 </div>
 
-<div>
-  <%= link_to '投稿', posts_path %>
-</div>
-
+<p>スレッド一覧</p>
 <% @topics.each do |topic| %>
   <div class="topic-row">
-    <P class=title><%= topic.title %></p>
+    <P class=title><%= link_to topic.title, posts_path %></p>
   </div>
 <% end %>
