@@ -1,7 +1,7 @@
 <h1><%= link_to 'トップページ', root_path, class:"top-page" %></h1>
 
 <div>
-  <h3><%= "スレッド名" %></h3>
+  <h3><%= @topic.title %></h3>
 </div>
 
 <% @posts.each do |post| %>

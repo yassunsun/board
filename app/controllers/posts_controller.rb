@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @topic = Topic.find(params[:topic_id])
   end
 
   def create
