@@ -15,6 +15,6 @@ class PostsController < ApplicationController
   private
  
   def post_params
-    params.permit(:name, :content)
+    params.permit(:comment)
   end
 end
