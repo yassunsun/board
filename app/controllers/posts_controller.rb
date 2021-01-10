@@ -7,8 +7,8 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       redirect_to posts_path
-    else
-      render "topics/index"
+    # else
+    #   render :index
     end
   end
 
