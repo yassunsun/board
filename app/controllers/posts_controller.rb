@@ -1,20 +1,24 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @post = Post.new
+    @topic = Topic.find(params[:topic_id])
+    @posts = @topic.posts
   end
 
   def create
-    @post = Post.new(post_params)
+    @topic = Topic.find(params[:topic_id])
+    @post = @topic.posts.new(post_params)
     if @post.save
-      redirect_to posts_path
-    # else
-    #   render :index
+      redirect_to topic_posts_path(@topic)
+    else
+      @posts = @topic.posts
+      render :index
     end
   end
 
   private
  
   def post_params
-    params.permit(:name, :content)
+    params.require(:post).permit(:comment)
   end
 end
