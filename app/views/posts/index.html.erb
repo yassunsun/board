@@ -7,21 +7,23 @@
 <% @posts.each do |post| %>
   <div class="post">
     <span class="name">
-      <%= "名無し" %>
+      名無し
     </span>
     <span class="time">
       <%= post.created_at %>
     </span>
-    <P class=comment><%= post.comment %></p>
+    <p class=comment><%= post.comment %></p>
   </div>
 <% end %>
 
-<%= form_with(model: [@topic, @post], local: true) do |f| %>
+<div id="list">
+</div>
+
+<%= form_with(model: [@topic, @post], id: "form" ) do |f| %>
   <div class="form-input">
-    内容
     <div>
-      <%= f.text_area :comment, class: 'form-comment' %>
+      <%= f.text_area :comment, class: 'form-comment', id: "comment" %>
     </div>
   </div>
-  <%= f.submit '投稿する', class: 'form-submit' %>
+  <%= f.submit '投稿する', class: 'form-submit', id: "submit" %>
 <% end %>
