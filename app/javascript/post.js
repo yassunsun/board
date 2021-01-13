@@ -25,7 +25,7 @@ function post() {
           <p class=comment>${item.comment}</p>
         </div>`;
 
-      list.insertAdjacentHTML("afterend", HTML);
+      list.insertAdjacentHTML("beforebegin", HTML);
       formText.value = "";
     };
     e.preventDefault();
