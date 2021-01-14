@@ -1,9 +1,11 @@
 function post() {
   const submit = document.getElementById("submit");
   submit.addEventListener("click", (e) => {
+    const posts = document.querySelectorAll(".post");
+    const topicId = posts.getAttribute("data-id");
     const formData = new FormData(document.getElementById("form"));
     const XHR = new XMLHttpRequest();
-    XHR.open("POST", "/topics/18/posts", true);
+    XHR.open("POST", `/topics/${topicId}/posts`, true);
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {

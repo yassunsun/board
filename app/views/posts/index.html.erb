@@ -5,7 +5,9 @@
 </div>
 
 <% @posts.each do |post| %>
-  <div class="post">
+  <%# <div class="post" data-id = <%= @topic.id %>
+  <%# <%= hidden_field_tag :topic_id, params[:topic_id] %>
+  <div class="post" data-id = <%= @topic.id %> >
     <span class="name">
       名無し
     </span>
@@ -21,6 +23,9 @@
 
 <%= form_with(model: [@topic, @post], id: "form" ) do |f| %>
   <div class="form-input">
+  <%# <div class="form-input"  data-id = <%= @topic.id %>
+    <%# <%= hidden_field_tag :topic_id, params[:topic_id] %>
+    <%# <%= f.hidden_field :topic_id, value: params[:topic_id] %>
     <div>
       <%= f.text_area :comment, class: 'form-comment', id: "comment" %>
     </div>
