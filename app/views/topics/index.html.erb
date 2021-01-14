@@ -1,9 +1,16 @@
 <h1>Topics#index</h1>
-<div>
-  <p><%= link_to '新規登録', new_user_registration_path, class:"registration" %></p>
-  <p><%= link_to 'ログイン', new_user_session_path, class:"session" %></p>
-  <p><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"destroy" %></p>
-</div>
+<% if user_signed_in? %>
+  <div>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"destroy" %>
+<% else %>
+  <div>
+    <%= link_to '新規登録', new_user_registration_path, class:"registration" %>
+  </div>
+  <div>
+    <%= link_to 'ログイン', new_user_session_path, class:"session" %>
+  </div>
+  </div>
+<% end %>
 
 <div>
   <p><%= link_to '新規スレッド作成', new_topic_path, class:"new-thread" %></p>
