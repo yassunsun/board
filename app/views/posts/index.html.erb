@@ -1,6 +1,10 @@
 <h1><%= link_to 'トップページ', root_path, class:"top-page" %></h1>
 
 <div>
+  <p><h3><%= current_user.nickname%> さん</h3></p>
+</div>
+
+<div>
   <h3><%= @topic.title %></h3>
 </div>
 
