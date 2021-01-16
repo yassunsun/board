@@ -1,0 +1,2 @@
+class SnsUser < ApplicationRecord
+end
