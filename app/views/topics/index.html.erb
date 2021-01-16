@@ -6,6 +6,9 @@
   <div>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"destroy" %>
   </div>
+  <div>
+  <p><%= link_to '新規スレッド作成', new_topic_path, class:"new-thread" %></p>
+</div>
 <% else %>
   <div>
     <%= link_to '新規登録', new_user_registration_path, class:"registration" %>
@@ -14,10 +17,6 @@
     <%= link_to 'ログイン', new_user_session_path, class:"session" %>
   </div>
 <% end %>
-
-<div>
-  <p><%= link_to '新規スレッド作成', new_topic_path, class:"new-thread" %></p>
-</div>
 
 <p>スレッド一覧</p>
 <% @topics.each do |topic| %>
