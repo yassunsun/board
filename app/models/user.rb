@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_many :topic_users
   has_many :topics, through: :topic_users
-  has_many :comments
+  has_many :posts
 
   validates :nickname, presence: true, length: { maximum: 6 }
   
