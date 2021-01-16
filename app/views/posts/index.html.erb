@@ -7,7 +7,7 @@
 <% @posts.each do |post| %>
   <div class="post">
     <span class="name">
-      名無し
+      <%= post.user.nickname %>
     </span>
     <span class="time">
       <%= post.created_at %>
