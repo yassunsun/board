@@ -19,6 +19,6 @@
 <p>スレッド一覧</p>
 <% @topics.each do |topic| %>
   <div class="topic-row">
-    <p><%= link_to topic.title, topic_posts_path(topic.id), class:"title" %></p>
+    <p><%= link_to topic.title, topic_posts_path(topic.id), data: {"turbolinks" => false}, class:"title" %></p>
   </div>
 <% end %>
