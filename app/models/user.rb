@@ -10,10 +10,9 @@ class User < ApplicationRecord
   validates :nickname, presence: true, length: { maximum: 6 }
 
   def self.from_omniauth(auth)
-    sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
+    sns = SnsUser.where(provider: auth.provider, uid: auth.uid).first_or_create
     user = User.where(email: auth.info.email).first_or_initialize(
-       first_name: auth.info.last_name,
-       last_name: auth.info.first_name,
+       nickname: auth.info.name
        email: auth.info.email
      )
  
