@@ -10,7 +10,6 @@ class PostsController < ApplicationController
     @post = @topic.posts.new(post_params)
     if @post.save
       render json:{ post: @post }
-      # redirect_to topic_posts_path(@topic)
     else
       @posts = @topic.posts
       render :index
