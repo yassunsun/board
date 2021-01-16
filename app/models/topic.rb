@@ -1,7 +1,5 @@
 class Topic < ApplicationRecord
-  has_many :topic_users
-  has_many :users, through: :topic_users, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :posts
 
   validates :title, presence: true
 end

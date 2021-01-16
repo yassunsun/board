@@ -5,9 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
-  has_many :topic_users
-  has_many :topics, through: :topic_users
-  has_many :comments
+  has_many :sns_credentials, dependent: :destroy
 
   validates :nickname, presence: true, length: { maximum: 6 }
   
