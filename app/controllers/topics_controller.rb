@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.create(topic_params)
+    @topic = Topic.new(topic_params)
     if @topic.save
       redirect_to root_path
     else
@@ -19,6 +19,6 @@ class TopicsController < ApplicationController
   private
  
   def topic_params
-    params.require(:topic).permit(:title)
+    params.require(:topic).permit(:title, user_ids: [])
   end
 end
