@@ -34,8 +34,4 @@
 
 <%= render "devise/shared/links" %>
 
-<div class="d-flex justify-content-between mt-4">
-  <%= link_to user_google_oauth2_omniauth_authorize_path, class:"btn btn-outline-danger sns-btn", method: :post do %>
-    <i class="fab fa-google fa-2x"></i>
-  <% end %>
-</div>
+<%= link_to 'Googleログイン',  user_google_oauth2_omniauth_authorize_path %>
