@@ -20,7 +20,7 @@
 </div>
 
 <%= form_with(model: [@topic, @post], id: "form" ) do |f| %>
-  <div class="form-input", id="post" data-id = <%= @topic.id %> >
+  <div class="form-input", id="post" data-id = <%= @topic.id %>>
     <div>
       <%= f.text_area :comment, class: 'form-comment', id: "comment" %>
     </div>
