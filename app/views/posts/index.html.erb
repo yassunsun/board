@@ -29,5 +29,6 @@
       <%= f.text_area :comment, class: 'form-comment', id: "comment" %>
     </div>
   </div>
+  <input id="nickname" type="hidden" value=<%= current_user.nickname %>>
   <%= f.submit '投稿する', class: 'form-submit', id: "submit" %>
 <% end %>
