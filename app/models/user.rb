@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :topic_users
   has_many :topics, through: :topic_users
   has_many :posts
+  has_many :sns_credentials, dependent: :destroy
 
   validates :nickname, presence: true, length: { maximum: 6 }
   
