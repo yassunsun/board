@@ -10,14 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_16_140944) do
+ActiveRecord::Schema.define(version: 2021_01_16_153632) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "comment", null: false
+    t.string "comment"
+    t.bigint "user_id"
     t.bigint "topic_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["topic_id"], name: "index_posts_on_topic_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "topic_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "topic_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["topic_id"], name: "index_topic_users_on_topic_id"
+    t.index ["user_id"], name: "index_topic_users_on_user_id"
   end
 
   create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -40,4 +51,7 @@ ActiveRecord::Schema.define(version: 2021_01_16_140944) do
   end
 
   add_foreign_key "posts", "topics"
+  add_foreign_key "posts", "users"
+  add_foreign_key "topic_users", "topics"
+  add_foreign_key "topic_users", "users"
 end

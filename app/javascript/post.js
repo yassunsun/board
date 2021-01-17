@@ -14,12 +14,13 @@ function post() {
         return null;
       }
       const item = XHR.response.post;
+      const nickname = document.getElementById("nickname").value;
       const list = document.getElementById("list");
       const formText = document.getElementById("comment");
       const HTML = `
         <div class="post">
           <span class="name">
-            名無し
+            ${nickname}
           </span>
           <span class="time">
             ${item.created_at}

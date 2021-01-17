@@ -1,13 +1,17 @@
 <h1><%= link_to 'トップページ', root_path, class:"top-page" %></h1>
 
 <div>
+  <p><h3><%= current_user.nickname%> さん</h3></p>
+</div>
+
+<div>
   <h3><%= @topic.title %></h3>
 </div>
 
 <% @posts.each do |post| %>
   <div class="post">
     <span class="name">
-      名無し
+      <%= post.user.nickname %>
     </span>
     <span class="time">
       <%= post.created_at %>
@@ -25,5 +29,6 @@
       <%= f.text_area :comment, class: 'form-comment', id: "comment" %>
     </div>
   </div>
+  <input id="nickname" type="hidden" value=<%= current_user.nickname %>>
   <%= f.submit '投稿する', class: 'form-submit', id: "submit" %>
 <% end %>
