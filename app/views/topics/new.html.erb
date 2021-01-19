@@ -1,14 +1,14 @@
-<h1><%= link_to 'トップページ', root_path, class:"top-page" %></h1>
+<div class="top">
+  <h1><%= link_to 'トップページ', root_path, class:"top-page" %></h1>
 
-<%= form_with(model: @topic, local: true) do |f| %>
-  <div class="form-input">
-    スレッド名
-    <div>
-      <%= f.text_field :title, class: 'form-title' %>
+  <%= form_with(model: @topic, local: true) do |f| %>
+    <div class="form-input">
+      スレッド名
+      <div>
+        <%= f.text_field :title, class: 'form-title' %>
+      </div>
     </div>
-  </div>
-  <input name="topic[user_ids][]" type="hidden" value=<%= current_user.id %>>
-  <div class="submit">
-    <%= f.submit '作成する', class: 'form-submit' %>
-  </div>
-<% end %>
+    <input name="topic[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      <%= f.submit '作成する', class: 'form-submit' %>
+  <% end %>
+</div>
