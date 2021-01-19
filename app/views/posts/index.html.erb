@@ -1,29 +1,33 @@
 <div class="post-content">
   <h1><%= link_to 'トップページ', root_path, class:"top-page" %></h1>
 
+  <%# 名前表示 %>
   <div class="nickname">
     <p><h3><%= current_user.nickname%> さん</h3></p>
   </div>
 
+  <%# スレッド名 %>
   <div class="topic-title">
     <h3><%= @topic.title %></h3>
   </div>
 
-    <% @posts.each do |post| %>
-      <div class="post">
-        <span class="name">
-          <%= post.user.nickname %>
-        </span>
-        <span class="time">
-          <%= post.created_at %>
-        </span>
-        <p class=comment><%= post.comment %></p>
-      </div>
-    <% end %>
+  <%# コメント一覧 %>
+  <% @posts.each do |post| %>
+    <div class="post">
+      <span class="name">
+        <%= post.user.nickname %>
+      </span>
+      <span class="time">
+        <%= post.created_at %>
+      </span>
+      <p class=comment><%= post.comment %></p>
+    </div>
+  <% end %>
 
   <div id="list">
   </div>
 
+  <%# 投稿フォーム %>
   <%= form_with(model: [@topic, @post], id: "form" ) do |f| %>
     <div class="form-input", id="post" data-id = <%= @topic.id %>>  
       <%= f.text_area :comment, class: 'form-comment', id: "comment" %>
