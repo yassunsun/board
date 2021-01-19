@@ -1,11 +1,13 @@
-<h1><%= link_to 'トップページ', root_path, class:"top-page" %></h1>
+<div class="post-content">
+  <h1><%= link_to 'トップページ', root_path, class:"top-page" %></h1>
 
-<div class="nickname">
-  <p><h3><%= current_user.nickname%> さん</h3></p>
-</div>
+  <div class="nickname">
+    <p><h3><%= current_user.nickname%> さん</h3></p>
+  </div>
 
-<div class="topic-title">
-  <h3><%= @topic.title %></h3>
+  <div class="topic-title">
+    <h3><%= @topic.title %></h3>
+  </div>
 </div>
 
 <div class=contents>
