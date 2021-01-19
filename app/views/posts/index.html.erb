@@ -8,28 +8,22 @@
   <div class="topic-title">
     <h3><%= @topic.title %></h3>
   </div>
-</div>
 
-<div class=contents>
-  <% @posts.each do |post| %>
-    <div class="post">
-      <span class="name">
-        <%= post.user.nickname %>
-      </span>
-      <span class="time">
-        <%= post.created_at %>
-      </span>
-      <p class=comment><%= post.comment %></p>
-    </div>
-  <% end %>
-</div>
+    <% @posts.each do |post| %>
+      <div class="post">
+        <span class="name">
+          <%= post.user.nickname %>
+        </span>
+        <span class="time">
+          <%= post.created_at %>
+        </span>
+        <p class=comment><%= post.comment %></p>
+      </div>
+    <% end %>
 
-<div class=lists>
   <div id="list">
   </div>
-</div>
 
-<div class="post-form">
   <%= form_with(model: [@topic, @post], id: "form" ) do |f| %>
     <div class="form-input", id="post" data-id = <%= @topic.id %>>  
       <%= f.text_area :comment, class: 'form-comment', id: "comment" %>
