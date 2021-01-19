@@ -1,3 +1,16 @@
+.top {
+  padding: 0 300px;
+}
+
+// ユーザー管理機能
+.log-in {
+  padding: 0 300px;
+}
+
+.log-out {
+  padding: 0 300px;
+}
+
 .registration {
   text-decoration: none;
 }
@@ -10,10 +23,19 @@
   text-decoration: none;
 }
 
+
+// 新規スレッド作成
 .new-thread {
   text-decoration: none;
 }
 
+
+// スレッド一覧
+.thread {
+  padding: 0 300px;
+}
+
 .title {
   text-decoration: none;
+  padding: 0 300px;
 }
