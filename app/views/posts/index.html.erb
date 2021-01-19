@@ -29,14 +29,12 @@
   </div>
 </div>
 
-<%= form_with(model: [@topic, @post], id: "form" ) do |f| %>
-  <div class="form-input", id="post" data-id = <%= @topic.id %>>
-    <div>
+<div class="post-form">
+  <%= form_with(model: [@topic, @post], id: "form" ) do |f| %>
+    <div class="form-input", id="post" data-id = <%= @topic.id %>>  
       <%= f.text_area :comment, class: 'form-comment', id: "comment" %>
     </div>
-  </div>
-  <input id="nickname" type="hidden" value=<%= current_user.nickname %>>
-  <div class="submit">
+    <input id="nickname" type="hidden" value=<%= current_user.nickname %>>
     <%= f.submit '投稿する', class: 'form-submit', id: "submit" %>
-  </div>
-<% end %>
+  <% end %>
+</div>
