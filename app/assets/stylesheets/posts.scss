@@ -1,9 +1,23 @@
 // トップページ遷移のリンク
 .top-page {
   text-decoration: none;
+  padding: 0 300px;
 }
 
+.nickname {
+  padding: 0 300px;
+}
+
+.topic-title {
+  padding: 0 300px;
+}
+
+
 // 投稿内容の表示
+.contents {
+  padding: 0 300px;
+}
+
 .post {
   margin: 10px 0;
   border-bottom: 1px solid;
@@ -22,4 +36,14 @@
     white-space: pre;
     margin: 5px 0;
   }
+}
+
+
+// 投稿フォーム
+.form-input {
+  padding: 0 300px;
+}
+
+.submit {
+  padding: 0 300px;
 }
