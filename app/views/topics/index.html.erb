@@ -1,6 +1,7 @@
-<h1 class="top">MLB-JOY</h1>
-<% if user_signed_in? %>
-  <div class="log-in">
+<div class="top">
+  <h1>MLB-JOY</h1>
+  
+  <% if user_signed_in? %>
     <div>
       <p><h3><%= current_user.nickname %> さん</h3></p>
     </div>
@@ -10,21 +11,19 @@
     <div>
       <p><%= link_to '新規スレッド作成', new_topic_path, class:"new-thread" %></p>
     </div>
-  </div>
-<% else %>
-  <div class="log-out">
+  <% else %>
     <div>
       <%= link_to '新規登録', new_user_registration_path, class:"registration" %>
     </div>
     <div>
       <%= link_to 'ログイン', new_user_session_path, class:"session" %>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
-<p class="thread">スレッド一覧</p>
-<% @topics.each do |topic| %>
-  <div class="topic-row">
-    <p><%= link_to topic.title, topic_posts_path(topic.id), data: {"turbolinks" => false}, class:"title" %></p>
-  </div>
-<% end %>
+  <p class="thread">スレッド一覧</p>
+  <% @topics.each do |topic| %>
+    <div class="topic-row">
+      <p><%= link_to topic.title, topic_posts_path(topic.id), data: {"turbolinks" => false}, class:"title" %></p>
+    </div>
+  <% end %>
+</div>
