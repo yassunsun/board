@@ -17,10 +17,10 @@
         <% if user_signed_in? %>
           <div class="current">
             <div>
-              <%= current_user.nickname %> さん
+              <h3><%= current_user.nickname %> さん</h3>
             </div>
             <div>
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"destroy" %>
+              <h3><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"destroy" %></h3>
             </div>
           </div>
         <% end %>
