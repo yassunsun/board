@@ -49,21 +49,35 @@
 }
 .side-bar {
   background-color: #253141;
-  width: 300px;
+  width: 400px;
   height: 100vh;
 }
 
-.side-top {
-  background-color: darkgreen;
+.side-left-top {
   height: 50vh;
+  background-image: image-url('San_Diego_Padres.png');
+  background-size: 100% 100%;
+
+}
+.side-left-bottom {
+  height: 50vh;
+  background-image: image-url('New_York_Mets.png');
+  background-size: 100% 100%;
 }
 
-.side-bottom {
-  background-color: darkmagenta;
+.side-right-top {
   height: 50vh;
+  background-image: image-url('Toronto_Blue_Jays.png');
+  background-size: 100% 100%;
+
+}
+.side-right-bottom {
+  height: 50vh;
+  background-image: image-url('Chicago_White_Sox.png');
+  background-size: 100% 100%;
 }
 
 .chat {
   background-color: #FFFFFF;
-  width: calc(100vw - 300px);
+  width: calc(100vw - 400px);
 }
