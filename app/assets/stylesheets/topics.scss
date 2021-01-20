@@ -2,7 +2,7 @@
   padding: 0 300px;
   text-decoration: none;
   background-image: image-url('Angel_Stadium_of_Anaheim.jpg');
-  background-size:  cover;
+  background-size: cover;
   height: 100vh;
 }
 
@@ -40,4 +40,30 @@
 .title {
   text-decoration: none;
   font-size: 24px;
+}
+
+
+// chat-app
+.wrapper {
+  display: flex;
+}
+.side-bar {
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+}
+
+.side-top {
+  background-color: darkgreen;
+  height: 50vh;
+}
+
+.side-bottom {
+  background-color: darkmagenta;
+  height: 50vh;
+}
+
+.chat {
+  background-color: #FFFFFF;
+  width: calc(100vw - 300px);
 }
