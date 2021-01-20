@@ -5,7 +5,7 @@
       <p><%= link_to '新規スレッド作成', new_topic_path, class:"new-thread" %></p>
     </div>
     <%# スレッド一覧 %>
-    <p class="thread">スレッド一覧</p>
+    <strong><p class="thread">スレッド一覧</p></strong>
     <% @topics.each do |topic| %>
       <div class="topic-row">
         <p><%= link_to topic.title, topic_posts_path(topic.id), data: {"turbolinks" => false}, class:"title" %></p>
