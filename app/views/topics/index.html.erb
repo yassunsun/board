@@ -13,9 +13,19 @@
     <% end %>
     <%# スレッド一覧 %>
   <% else %>
-    <div>
-      <%= image_tag 'Ohtani_2018.png', :size =>'320x480' %>
-      <%= image_tag '1004px-Shohei_Otani_(48484060286)_(cropped).png', :size =>'320x480' %>
+    <div class="images">
+      <div class="image">
+        <%= image_tag 'Ohtani_2018.png', :size =>'320x480' %>
+        <div>
+          <%= link_to '新規登録', new_user_registration_path, class:"registration" %>
+        </div>
+      </div>
+      <div class="image">
+        <%= image_tag '1004px-Shohei_Otani_(48484060286)_(cropped).png', :size =>'320x480' %>
+        <div>
+          <%= link_to 'ログイン', new_user_session_path, class:"session" %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
