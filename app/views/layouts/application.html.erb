@@ -10,6 +10,28 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__bar">
+        <h1 class="grid-6"><a href="/">MLB-JOY</a></h1>
+        <% if user_signed_in? %>
+          <div>
+            <p><h3><%= current_user.nickname %> さん</h3></p>
+          </div>
+          <div>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"destroy" %>
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <div>
+              <%= link_to '新規登録', new_user_registration_path, class:"registration" %>
+            </div>
+            <div>
+              <%= link_to 'ログイン', new_user_session_path, class:"session" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
