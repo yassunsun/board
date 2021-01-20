@@ -20,4 +20,15 @@
 
 .header__bar {
   padding: 0 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.top-title {
+  text-decoration: none;
+}
+
+.current{
+  display: flex;
+  justify-content: flex-end;
 }
