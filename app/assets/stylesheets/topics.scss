@@ -5,12 +5,11 @@
 
 
 // ユーザー管理機能
-.registration {
+.user {
   text-decoration: none;
-}
-
-.session {
-  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
 }
 
 
@@ -26,6 +25,7 @@
   display: flex;
   justify-content: space-around;
 }
+
 
 
 // スレッド一覧
