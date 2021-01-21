@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :topics, through: :topic_users
   has_many :posts
 
-  validates :nickname, presence: true, length: { maximum: 6 }
+  validates :nickname, presence: true
 
   # def self.without_sns_data(auth)
   #   user = User.where(email: auth.info.email).first
