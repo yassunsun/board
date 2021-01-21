@@ -1,3 +1,44 @@
+// トップページ
+.wrapper {
+  display: flex;
+}
+.side-bar {
+  background-color: #253141;
+  width: 400px;
+  height: 100vh;
+}
+
+.side-left-top {
+  height: 50vh;
+  background-image: image-url('San_Diego_Padres.png');
+  background-size: 100% 100%;
+
+}
+.side-left-bottom {
+  height: 50vh;
+  background-image: image-url('New_York_Mets.png');
+  background-size: 100% 100%;
+}
+
+.side-right-top {
+  height: 50vh;
+  background-image: image-url('Toronto_Blue_Jays.png');
+  background-size: 100% 100%;
+
+}
+.side-right-bottom {
+  height: 50vh;
+  background-image: image-url('Chicago_White_Sox.png');
+  background-size: 100% 100%;
+}
+
+.center {
+  background-color: #FFFFFF;
+  width: calc(100vw - 400px);
+}
+
+
+// 
 .top {
   text-decoration: none;
   background-image: image-url('Angel_Stadium_of_Anaheim.jpg');
@@ -42,44 +83,4 @@
   text-decoration: none;
   font-size: 24px;
   background-color: darkgray;
-}
-
-
-// chat-app
-.wrapper {
-  display: flex;
-}
-.side-bar {
-  background-color: #253141;
-  width: 400px;
-  height: 100vh;
-}
-
-.side-left-top {
-  height: 50vh;
-  background-image: image-url('San_Diego_Padres.png');
-  background-size: 100% 100%;
-
-}
-.side-left-bottom {
-  height: 50vh;
-  background-image: image-url('New_York_Mets.png');
-  background-size: 100% 100%;
-}
-
-.side-right-top {
-  height: 50vh;
-  background-image: image-url('Toronto_Blue_Jays.png');
-  background-size: 100% 100%;
-
-}
-.side-right-bottom {
-  height: 50vh;
-  background-image: image-url('Chicago_White_Sox.png');
-  background-size: 100% 100%;
-}
-
-.center {
-  background-color: #FFFFFF;
-  width: calc(100vw - 400px);
 }

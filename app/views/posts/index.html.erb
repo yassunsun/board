@@ -1,37 +1,19 @@
-<div class="post-content">
-
-  <%# 名前表示 %>
-  <div class="nickname">
-    <p><h3><%= current_user.nickname%> さん</h3></p>
-  </div>
-
-  <%# スレッド名 %>
-  <div class="topic-title">
-    <h3><%= @topic.title %></h3>
-  </div>
-
-  <%# コメント一覧 %>
-  <% @posts.each do |post| %>
-    <div class="post">
-      <span class="name">
-        <%= post.user.nickname %>
-      </span>
-      <span class="time">
-        <%= post.created_at %>
-      </span>
-      <p class=comment><%= post.comment %></p>
+<div class="wrapper">
+  <div class="side-bar">
+    <div class="side-left-top">
     </div>
-  <% end %>
-
-  <div id="list">
+    <div class="side-left-bottom">
+    </div>
+  </div>
+  
+  <div class="center">
+    <%= render "post" %>
   </div>
 
-  <%# 投稿フォーム %>
-  <%= form_with(model: [@topic, @post], id: "form" ) do |f| %>
-    <div class="form-input", id="post" data-id = <%= @topic.id %>>  
-      <%= f.text_area :comment, class: 'form-comment', id: "comment" %>
+  <div class="side-bar">
+    <div class="side-right-top">
     </div>
-    <input id="nickname" type="hidden" value=<%= current_user.nickname %>>
-    <%= f.submit '投稿する', class: 'form-submit', id: "submit" %>
-  <% end %>
+    <div class="side-right-bottom">
+    </div>
+  </div>
 </div>

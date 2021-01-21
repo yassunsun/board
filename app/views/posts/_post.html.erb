@@ -1,0 +1,32 @@
+<div class="post-content">
+
+  <%# スレッド名 %>
+  <div class="topic-title">
+    <h3><%= @topic.title %></h3>
+  </div>
+
+  <%# コメント一覧 %>
+  <% @posts.each do |post| %>
+    <div class="post">
+      <span class="nickname">
+        <%= post.user.nickname %>
+      </span>
+      <span class="time">
+        <%= post.created_at %>
+      </span>
+      <p class=comment><%= post.comment %></p>
+    </div>
+  <% end %>
+
+  <div id="list">
+  </div>
+
+  <%# 投稿フォーム %>
+  <%= form_with(model: [@topic, @post], id: "form" ) do |f| %>
+    <div class="form-input", id="post" data-id = <%= @topic.id %>>  
+      <%= f.text_area :comment, class: 'form-comment', id: "comment" %>
+    </div>
+    <input id="nickname" type="hidden" value=<%= current_user.nickname %>>
+    <%= f.submit '投稿する', class: 'form-submit', id: "submit" %>
+  <% end %>
+</div>
