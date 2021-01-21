@@ -24,7 +24,7 @@
 
 - has_many :topic_users
 - has_many :users, through: topic_users
-- has_many :comments
+- has_many :posts
 
 ## topic_users テーブル
 
@@ -35,18 +35,18 @@
 
 ### Association
 
-- belongs_to :topic
 - belongs_to :user
+- belongs_to :topic
 
-## messages テーブル
+## posts テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| content | string     |                                |
+| comment | text       | null: false                    |
 | user    | references | null: false, foreign_key: true |
 | room    | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :room
 - belongs_to :user
+- belongs_to :topic
