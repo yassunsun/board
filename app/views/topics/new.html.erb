@@ -1,13 +1,19 @@
-<div class="top">
-
-  <%= form_with(model: @topic, local: true) do |f| %>
-    <div class="form-input">
-      スレッド名
-      <div>
-        <%= f.text_field :title, class: 'form-title' %>
-      </div>
+<div class="wrapper">
+  <div class="side-bar">
+    <div class="side-left-top">
     </div>
-    <input name="topic[user_ids][]" type="hidden" value=<%= current_user.id %>>
-      <%= f.submit '作成する', class: 'form-submit' %>
-  <% end %>
+    <div class="side-left-bottom">
+    </div>
+  </div>
+  
+  <div class="center">
+    <%= render "form" %>
+  </div>
+
+  <div class="side-bar">
+    <div class="side-right-top">
+    </div>
+    <div class="side-right-bottom">
+    </div>
+  </div>
 </div>

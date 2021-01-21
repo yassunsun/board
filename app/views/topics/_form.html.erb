@@ -1,0 +1,15 @@
+<div class="top">
+
+  <div class="form">
+    <%= form_with(model: @topic, local: true) do |f| %>
+      <div>
+        <h4 class="thread-name">スレッド作成</h4>
+        <div>
+          <%= f.text_field :title, class: 'form-title' %>
+        </div>
+      </div>
+      <input name="topic[user_ids][]" type="hidden" value=<%= current_user.id %>>
+        <%= f.submit '作成する', class: 'form-submit' %>
+    <% end %>
+  </div>
+</div>
