@@ -1,15 +1,16 @@
-// トップページ
+// 全体
 .wrapper {
   display: flex;
 }
 
-// 左サイド
+// 両サイド
 .side-bar {
   background-color:black;
   width: 400px;
   height: 100vh;
 }
 
+// 左サイド
 .side-left {
   display: flex;
 }
@@ -229,13 +230,12 @@
   background-size: 100% 100%;
 }
 
+// 中央
 .center {
   background-color: #FFFFFF;
   width: calc(100vw - 400px);
 }
 
-
-// 
 .top {
   text-decoration: none;
   background-image: image-url('Angel_Stadium_of_Anaheim.jpg');
@@ -271,7 +271,7 @@
 }
 
 
-// 新規登録 or ログイン
+// 新規登録 or ログインのページ
 .images {
   display: flex;
   justify-content: space-around;
