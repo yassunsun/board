@@ -14,17 +14,17 @@
 - has_many :topics, through: topic_users
 - has_many :posts
 
-## rooms テーブル
+## topics テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| name   | string | null: false |
+| title  | string | null: false |
 
 ### Association
 
-- has_many :room_users
-- has_many :users, through: room_users
-- has_many :messages
+- has_many :topic_users
+- has_many :users, through: topic_users
+- has_many :comments
 
 ## room_users テーブル
 
