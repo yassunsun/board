@@ -19,7 +19,7 @@ function post() {
       const formText = document.getElementById("comment");
       const HTML = `
         <div class="post">
-          <span class="name">
+          <span class="nickname">
             ${nickname}
           </span>
           <span class="time">

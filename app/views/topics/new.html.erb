@@ -1,12 +1,13 @@
-<h1><%= link_to 'トップページ', root_path, class:"top-page" %></h1>
-
-<%= form_with(model: @topic, local: true) do |f| %>
-  <div class="form-input">
-    スレッド名
-    <div>
-      <%= f.text_field :title, class: 'form-title' %>
-    </div>
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "side-left" %>
   </div>
-  <input name="topic[user_ids][]" type="hidden" value=<%= current_user.id %>>
-  <%= f.submit '作成する', class: 'form-submit' %>
-<% end %>
+  
+  <div class="center">
+    <%= render "form" %>
+  </div>
+
+  <div class="side-bar">
+    <%= render "side-right" %>
+  </div>
+</div>

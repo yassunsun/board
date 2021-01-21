@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__bar">
+        <h1><a class="top-title" href="/">MLB-JOY</a></h1>
+      </div>
+        <% if user_signed_in? %>
+          <div class="current">
+            <div>
+              <h3 class="user-name"><%= current_user.nickname %> さん</h3>
+            </div>
+            <div>
+              <h3><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"destroy" %></h3>
+            </div>
+          </div>
+        <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

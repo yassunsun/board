@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+
+
+/* ヘッダー */
+.header {
+  background-color: darkgrey;
+}
+
+.header__bar {
+  padding: 0 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.top-title {
+  text-decoration: none;
+  font-size: 40px;
+}
+
+.current{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-name {
+  font-size: 24px;
+}
+
+.destroy {
+  text-decoration: none;
+  margin: 20px;
+  font-size: 24px;
+}

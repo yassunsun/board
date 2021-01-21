@@ -1,14 +1,20 @@
 // トップページ遷移のリンク
-.top-page {
+.post-content {
   text-decoration: none;
+  padding: 0 30px;
 }
 
+
 // 投稿内容の表示
+.topic-title {
+  font-size: 24px;
+}
+
 .post {
   margin: 10px 0;
   border-bottom: 1px solid;
 
-  .name {
+  .nickname {
     background: yellow;
     padding: 3px;
   }
@@ -21,5 +27,6 @@
   .comment {
     white-space: pre;
     margin: 5px 0;
+    font-size: 24px;
   }
 }
