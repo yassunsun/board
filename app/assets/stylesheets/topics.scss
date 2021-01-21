@@ -243,6 +243,12 @@
   height: 100vh;
 }
 
+// 新規登録 or ログインのページ
+.images {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+}
 
 // ユーザー管理機能
 .user {
@@ -252,7 +258,6 @@
   font-size: 24px;
   background-color: darkgray;
 }
-
 
 // 新規スレッド作成
 .new-thread {
@@ -269,15 +274,6 @@
   color: orange;
   font-size: 24px;
 }
-
-
-// 新規登録 or ログインのページ
-.images {
-  display: flex;
-  justify-content: space-around;
-}
-
-
 
 // スレッド一覧
 .thread {
