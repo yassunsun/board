@@ -28,10 +28,10 @@
 
 ## topic_users テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| topic  | references | null: false, foreign_key: true |
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| user   | references | foreign_key: true |
+| topic  | references | foreign_key: true |
 
 ### Association
 
@@ -40,11 +40,11 @@
 
 ## posts テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| comment | text       | null: false                    |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
+| Column  | Type       | Options           |
+| ------- | ---------- | ----------------- |
+| comment | text       | null: false       |
+| user    | references | foreign_key: true |
+| room    | references | foreign_key: true |
 
 ### Association
 
