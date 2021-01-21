@@ -26,16 +26,16 @@
 - has_many :users, through: topic_users
 - has_many :comments
 
-## room_users テーブル
+## topic_users テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
+| topic  | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :room
+- belongs_to :topic
 - belongs_to :user
 
 ## messages テーブル
