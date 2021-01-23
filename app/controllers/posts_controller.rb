@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create]
+
   def index
     @post = Post.new
     @topic = Topic.find(params[:topic_id])
