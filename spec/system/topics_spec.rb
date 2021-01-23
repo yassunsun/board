@@ -17,7 +17,7 @@ RSpec.describe "スレッド作成", type: :system do
       # ユーザーをDBに保存する
       @user = FactoryBot.create(:user)
       # トップページに移動する
-      visit root_path
+      basic root_path
       # トップページにログインページへ遷移するボタンがあることを確認する
       expect(page).to have_content('ログイン')
       # ログインページへ遷移する
@@ -54,7 +54,7 @@ RSpec.describe "スレッド作成", type: :system do
       # ユーザーをDBに保存する
       @user = FactoryBot.create(:user)
       # トップページに移動する
-      basic root_path
+      visit root_path
       # トップページにログインページへ遷移するボタンがあることを確認する
       expect(page).to have_content('ログイン')
       # ログインページへ遷移する
