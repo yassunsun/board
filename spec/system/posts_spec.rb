@@ -15,7 +15,7 @@ RSpec.describe "コメント投稿", type: :system do
 
   context 'コメントの投稿に成功する場合' do
     it 'コメントの投稿に成功すると、投稿した内容が表示される' do
-      # サインインする
+      # ログインする
       sign_in(@topic_user.user)
       # 作成されたスレッドへ遷移する
       click_on(@topic_user.topic.title)
