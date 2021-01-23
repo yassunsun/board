@@ -10,14 +10,35 @@ end
 RSpec.describe "コメント投稿", type: :system do
   before do
     @topic_user = FactoryBot.create(:topic_user)
+    @post_comment = Faker::Lorem.sentence
   end
 
+  context 'コメントの投稿に成功する場合' do
+    it 'コメントの投稿に成功すると、投稿した内容が表示される' do
+      # サインインする
+      sign_in(@topic_user.user)
+      # 作成されたスレッドへ遷移する
+      click_on(@topic_user.topic.title)
+      # 値をコメントフォームに入力する
+      fill_in 'comment', with: @post_comment
+      # 送信した値がDBに保存されていることを確認する
+      expect {
+        find('input[name="commit"]').click
+      }.to change { Post.count }.by(1)
+      # コメント投稿ページにリダイレクトされる
+      expect(current_path).to eq topic_posts_path(@topic_user.topic)
+      # 送信した値がブラウザに表示されていることを確認する
+      expect(page).to have_content(@post_comment)
+    end
+  end
   context 'コメントの投稿に失敗する場合' do
     it '送る値が空のためコメントの投稿に失敗する' do
       # ログインする
       sign_in(@topic_user.user)
       # 作成されたスレッドへ遷移する
       click_on(@topic_user.topic.title)
+      # コメントを空にする
+      fill_in 'comment', with: nil
       # DBに保存されていないことを確認する
       expect {
         find('input[name="commit"]').click
