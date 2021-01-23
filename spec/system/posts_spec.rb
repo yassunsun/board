@@ -14,14 +14,16 @@ RSpec.describe "コメント投稿", type: :system do
 
   context 'コメントの投稿に失敗する場合' do
     it '送る値が空のためコメントの投稿に失敗する' do
-      # サインインする
+      # ログインする
       sign_in(@topic_user.user)
-      # 作成されたチャットルームへ遷移する
-      click_on(@@topic_user.topic.title)
+      # 作成されたスレッドへ遷移する
+      click_on(@topic_user.topic.title)
       # DBに保存されていないことを確認する
-
+      expect {
+        find('input[name="commit"]').click
+      }.not_to change{Post.count}
       # 元のページに戻ってくることを確認する
-
+      expect(current_path).to eq topic_posts_path(@topic_user.topic)
     end
   end
 end

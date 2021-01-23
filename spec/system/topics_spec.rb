@@ -23,7 +23,7 @@ RSpec.describe "スレッド作成", type: :system do
       visit new_topic_path
       # スレッド名を入力する
       fill_in 'topic_title', with: @topic.title
-      # サインアップボタンを押すとユーザーモデルのカウントが1上がることを確認する
+      # 作成するを押すとTopicモデルのカウントが１増えることを確認する
       expect{
         find('input[name="commit"]').click
       }.to change { Topic.count }.by(1)
