@@ -17,16 +17,16 @@ RSpec.describe "スレッド作成", type: :system do
       # ユーザーをDBに保存する
       @user = FactoryBot.create(:user)
       # トップページに移動する
-      basic root_path
+      visit root_path
       # トップページにログインページへ遷移するボタンがあることを確認する
       expect(page).to have_content('ログイン')
       # ログインページへ遷移する
       visit new_user_session_path
       # 正しいユーザー情報を入力する
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
       # ログインボタンを押す
-      find('input[name="commit"]').click
+      click_on("Log in")
       # トップページへ遷移することを確認する
       expect(current_path).to eq root_path
       # トップページに新規スレッド作成ページへ遷移するボタンがある
@@ -60,10 +60,10 @@ RSpec.describe "スレッド作成", type: :system do
       # ログインページへ遷移する
       visit new_user_session_path
       # 正しいユーザー情報を入力する
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
       # ログインボタンを押す
-      find('input[name="commit"]').click
+      click_on("Log in")
       # トップページへ遷移することを確認する
       expect(current_path).to eq root_path
       # トップページに新規スレッド作成ページへ遷移するボタンがある
