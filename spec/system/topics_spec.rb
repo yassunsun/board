@@ -9,26 +9,14 @@ end
 
 RSpec.describe "スレッド作成", type: :system do
   before do
+    @user = FactoryBot.create(:user)
     @topic = FactoryBot.build(:topic)
   end
 
   context 'スレッドの作成ができる場合' do
     it 'ログインしたユーザーはスレッドの作成ができる' do
-      # ユーザーをDBに保存する
-      @user = FactoryBot.create(:user)
-      # トップページに移動する
-      basic root_path
-      # トップページにログインページへ遷移するボタンがあることを確認する
-      expect(page).to have_content('ログイン')
-      # ログインページへ遷移する
-      visit new_user_session_path
-      # 正しいユーザー情報を入力する
-      fill_in 'user_email', with: @user.email
-      fill_in 'user_password', with: @user.password
-      # ログインボタンを押す
-      click_on("Log in")
-      # トップページへ遷移することを確認する
-      expect(current_path).to eq root_path
+      # ログインする
+      sign_in(@user)
       # トップページに新規スレッド作成ページへ遷移するボタンがある
       expect(page).to have_content('新規スレッド作成')
       # 新規スレッド作成ページに移動する
@@ -51,29 +39,20 @@ RSpec.describe "スレッド作成", type: :system do
       expect(page).to have_no_content('新規スレッド作成')
     end
     it 'タイトルが空だとスレッドの作成ができない' do
-      # ユーザーをDBに保存する
-      @user = FactoryBot.create(:user)
-      # トップページに移動する
-      visit root_path
-      # トップページにログインページへ遷移するボタンがあることを確認する
-      expect(page).to have_content('ログイン')
-      # ログインページへ遷移する
-      visit new_user_session_path
-      # 正しいユーザー情報を入力する
-      fill_in 'user_email', with: @user.email
-      fill_in 'user_password', with: @user.password
-      # ログインボタンを押す
-      click_on("Log in")
-      # トップページへ遷移することを確認する
-      expect(current_path).to eq root_path
+      # ログインする
+      sign_in(@user)
       # トップページに新規スレッド作成ページへ遷移するボタンがある
       expect(page).to have_content('新規スレッド作成')
       # 新規スレッド作成ページに移動する
       visit new_topic_path
-      # スレッド名を入力する
+      # スレッド名を空にする
       fill_in 'topic_title', with: nil
+      # DBに保存されていないことを確認する
+      expect {
+        find('input[name="commit"]').click
+      }.not_to change { Topic.count }
       # スレッド作成ページに戻される
-      expect(current_path).to eq new_topic_path
+      expect(current_path).to eq topics_path
     end
   end
 end
