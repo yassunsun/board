@@ -21,7 +21,7 @@ RSpec.describe "コメント投稿", type: :system do
       click_on(@topic_user.topic.title)
       # 値をコメントフォームに入力する
       fill_in 'comment', with: @post_comment
-      # 送信した値がDBに保存されていることを確認する
+      # 非同期通信で送信した値がDBに保存されていることを確認する
       wait_for_ajax do
         expect {
           find('input[name="commit"]').click
