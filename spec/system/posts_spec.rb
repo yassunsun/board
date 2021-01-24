@@ -21,11 +21,11 @@ RSpec.describe "コメント投稿", type: :system do
       click_on(@topic_user.topic.title)
       # 値をコメントフォームに入力する
       fill_in 'comment', with: @post_comment
-      # 非同期通信で送信した値がDBに保存されていることを確認する
+      # 投稿するをクリックする
+      find('input[name="commit"]').click
+      # 非同期通信で送信した値をDBに保存する
       wait_for_ajax do
-        expect {
-          find('input[name="commit"]').click
-        }.to change { Post.count }.by(1)
+        change { Post.count }.by(1)
       end
       # コメント投稿ページにリダイレクトされる
       expect(current_path).to eq topic_posts_path(@topic_user.topic)
