@@ -8,9 +8,7 @@ MLB-JOY
 URL<br>
 https://mlb-joy.herokuapp.com/
 
-Basic認証<br>
-・jfthtd<br>
-・77dghdf67
+Basic認証あり
 
 テストユーザー<br>
 Email：oejgw@boeef<br>
