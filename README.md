@@ -1,3 +1,21 @@
+# アプリ名
+MLB-JOY
+
+# 概要
+メジャーリーグに特化した掲示板のアプリケーションです。
+
+# 本番環境
+URL<br>
+https://mlb-joy.herokuapp.com/
+
+Basic認証<br>
+・jfthtd<br>
+・77dghdf67
+
+テストユーザー<br>
+Email：oejgw@boeef<br>
+Password：dDcniRP2EmBhbuu
+
 # テーブル設計
 
 ## users テーブル
