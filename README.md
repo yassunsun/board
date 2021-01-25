@@ -18,7 +18,8 @@ Password：dDcniRP2EmBhbuu
 ### トップページ
 ![画像](./images/トップページ.png)
 
-### 
+### コメント投稿
+![GIF](./images/挙動.gif)
 
 # テーブル設計
 
