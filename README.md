@@ -18,6 +18,12 @@ Password：dDcniRP2EmBhbuu
 ### トップページ
 ![画像](./images/トップページ.png)
 
+### スレッド一覧ページ
+![画像](./images/スレッド一覧ページ.png)
+
+### スレッド作成
+![画像](./images/スレッド作成.gif)
+
 ### コメント投稿
 ![GIF](./images/挙動.gif)
 
