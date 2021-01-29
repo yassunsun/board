@@ -13,8 +13,6 @@ MLB-JOY
 URL<br>
 https://mlb-joy.herokuapp.com/
 
-Basic認証あり
-
 テストユーザー<br>
 Email：oejgw@boeef<br>
 Password：dDcniRP2EmBhbuu
