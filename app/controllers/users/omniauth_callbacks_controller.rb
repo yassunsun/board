@@ -1,24 +1,20 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
-    callback_for(:google)
-  end
+    authorization
+   end
+  
+   private
+  
+   def authorization
+    sns_info = User.from_omniauth(request.env["omniauth.auth"])
+    @user = sns_info[:user]
 
-
-  def callback_for(provider)
-    @omniauth = request.env['omniauth.auth']
-    info = User.find_oauth(@omniauth)
-    @user = info[:user]
-    if @user.persisted? 
+     if @user.persisted? #ユーザー情報が登録済みなので、新規登録ではなくログイン処理を行う
       sign_in_and_redirect @user, event: :authentication
-      set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
-    else 
-      @sns = info[:sns]
-      render template: "devise/registrations/new" 
+    else #ユーザー情報が未登録なので、新規登録画面へ遷移する
+      @sns_id = sns_info[:sns].id
+      render template: 'devise/registrations/new'
     end
-  end
-
-  def failure
-    redirect_to root_path and return
-  end
+   end
 end
